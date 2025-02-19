@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer - Medicine Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Include Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Developer Content -->
+    <div class="container mx-auto pt-24">
+        <h6 class="text-xl font-semibold">About Junaid Khan: Your AI & ML Engineer</h6>
+        <h5 class="text-2xl font-bold mt-4">Meet the Developer</h5>
+        <p class="mt-4">
+            Hello, We are Farzana and Afrin. We are passionate about harnessing the power of technology to make a positive impact
+            on people's lives. Allow me to share a bit about my journey in the world of artificial intelligence and machine learning.
+        </p>
+        <h5 class="text-xl font-semibold mt-6">Our Expertise</h5>
+        <p class="mt-4">
+            Our work is driven by a commitment to excellence and a belief that technology should be accessible and beneficial to
+            everyone. Whether it's developing predictive models, creating intelligent algorithms, or designing user-friendly
+            interfaces, we strive for solutions that are both cutting-edge and user-centric.
+        </p>
+        <h5 class="text-xl font-semibold mt-6">Passion for Health Tech</h5>
+        <p class="mt-4">
+            The development of Medicine Recommendation represents a convergence of my passion for AI and my dedication to improving
+            healthcare accessibility. I believe that AI has the potential to transform the way we approach healthcare, making it
+            more personalized and informative. This platform is a testament to that vision.
+        </p>
+        <h5 class="text-xl font-semibold mt-6">Join us on this Journey</h5>
+        <p class="mt-4">
+            We invite you to explore Medicine Recommendation and experience firsthand the fusion of AI and healthcare. Together, we
+            can empower individuals with knowledge, promote well-being, and contribute to a brighter and healthier future.
+        </p>
+    </div>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
+
+    <script>
+        // Dynamically load navbar and footer
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+
+                // Highlight the active link
+                const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    if (link.dataset.page === currentPage) {
+                        link.classList.add('border-white');
+                    }
+                });
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
